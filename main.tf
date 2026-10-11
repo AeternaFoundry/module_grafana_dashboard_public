@@ -1,0 +1,13 @@
+resource "grafana_dashboard_public" "dashboard_publics" {
+  for_each = var.dashboard_publics
+
+  dashboard_uid          = each.value.dashboard_uid
+  access_token           = each.value.access_token
+  annotations_enabled    = each.value.annotations_enabled
+  is_enabled             = each.value.is_enabled
+  org_id                 = each.value.org_id
+  share                  = each.value.share
+  time_selection_enabled = each.value.time_selection_enabled
+  uid                    = each.value.uid
+}
+
